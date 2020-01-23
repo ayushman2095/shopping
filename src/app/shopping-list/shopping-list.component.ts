@@ -27,7 +27,11 @@ export class ShoppingListComponent implements OnInit {
       });
       this.tempArr = res;
     });
-    this.data.sort((a, b)=>{return b.discountP-a.discountP});
+    if(this.data!= undefined){
+      if(this.data.length>0){
+      this.data.sort((a, b)=>{return b.discountP-a.discountP});
+      }
+    }
     console.log( this.data)
   
   }
@@ -59,6 +63,7 @@ public addtoCart(el){
       this.cartData.push(el);
     }
   } else if(this.cartData.length== 0){
+    el.quantity = parseInt(el.quantity) + 1;
     this.cartData.push(el)
   }
   console.log(this.cartData);
