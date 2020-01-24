@@ -26,13 +26,13 @@ export class ShoppingListComponent implements OnInit {
         element['quantity'] = 0;
       });
       this.tempArr = res;
-    });
-    if(this.data!= undefined){
-      if(this.data.length>0){
-      this.data.sort((a, b)=>{return b.discountP-a.discountP});
+      if(this.data!= undefined){
+        if(this.data.length>0){
+        this.data.sort((a, b)=>{return b.discountP-a.discountP});
+        }
       }
-    }
-    console.log( this.data)
+    });
+   
   
   }
 public filterVal(event) {
